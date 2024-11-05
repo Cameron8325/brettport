@@ -3,23 +3,31 @@ import styled from 'styled-components';
 
 const ContactSection = styled.section`
   padding: 100px 0;
-  background: linear-gradient(135deg, #1e2d38 0%, #2c3e50 100%); /* Darker, rich gradient background */
+  background: linear-gradient(135deg, #1e2d38 0%, #2c3e50 100%);
   position: relative;
   color: #ffffff;
   text-align: center;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 70px 0;
+  }
 `;
 
 const FloatingShape = styled.div`
   position: absolute;
-  background-color: rgba(50, 90, 100, 0.2); /* Subtle teal-blue floating shapes */
+  background-color: rgba(50, 90, 100, 0.2);
   width: ${(props) => props.size || '150px'};
   height: ${(props) => props.size || '150px'};
   border-radius: 50%;
   top: ${(props) => props.top || '10%'};
   left: ${(props) => props.left || '10%'};
   z-index: 1;
-  filter: blur(8px); /* Slight blur for softer shapes */
+  filter: blur(8px);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Heading = styled.h2`
@@ -27,6 +35,11 @@ const Heading = styled.h2`
   margin-bottom: 50px;
   color: #ffffff;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
 `;
 
 const Form = styled.form`
@@ -36,12 +49,17 @@ const Form = styled.form`
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  background-color: #37474f; /* Darker form background */
+  background-color: #37474f;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  border: 2px solid #455a64; /* Dark accent border */
+  border: 2px solid #455a64;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
 `;
 
 const Input = styled.input`
@@ -51,11 +69,16 @@ const Input = styled.input`
   border-radius: 8px;
   border: 1px solid #b0bec5;
   font-size: 1.1rem;
-  background-color: #546e7a; /* Dark input field background */
+  background-color: #546e7a;
   color: #ffffff;
 
   &::placeholder {
-    color: #cfd8dc; /* Lighter placeholder color */
+    color: #cfd8dc;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 12px;
   }
 `;
 
@@ -66,17 +89,23 @@ const TextArea = styled.textarea`
   border-radius: 8px;
   border: 1px solid #b0bec5;
   font-size: 1.1rem;
-  background-color: #546e7a; /* Darker textarea background */
+  background-color: #546e7a;
   color: #ffffff;
+  resize: none;
 
   &::placeholder {
     color: #cfd8dc;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 12px;
   }
 `;
 
 const SubmitButton = styled.button`
   padding: 15px 30px;
-  background-color: #007b8a; /* Teal color */
+  background-color: #007b8a;
   color: white;
   border: none;
   border-radius: 8px;
@@ -85,11 +114,15 @@ const SubmitButton = styled.button`
   transition: background-color 0.3s ease, transform 0.2s ease;
 
   &:hover {
-    background-color: #005f6b; /* Slightly darker teal for hover */
+    background-color: #005f6b;
     transform: scale(1.05);
   }
-`;
 
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+`;
 
 export const Contact = () => {
   return (

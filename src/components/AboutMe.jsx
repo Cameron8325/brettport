@@ -15,6 +15,10 @@ const AboutSection = styled.section`
   min-height: 100vh;
   background: url(${backgroundImage}) no-repeat center center;
   background-size: cover;
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
 `;
 
 const AboutContent = styled.div`
@@ -26,25 +30,47 @@ const AboutContent = styled.div`
   width: 90%;
   max-width: 1200px;
   gap: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 30px;
+  }
 `;
 
 const TextContainer = styled.div`
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.9); /* Subtle background behind text */
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 15px;
+    order: ${(props) => (props.switchOrder ? 2 : 1)};
+  }
 `;
 
 const Heading = styled(motion.h2)`
   font-size: 3rem;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+    text-align: center;
+  }
 `;
 
 const Paragraph = styled(motion.p)`
   font-size: 1.2rem;
   line-height: 1.8;
   margin-top: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 const ListContainer = styled.div`
@@ -60,6 +86,11 @@ const BioList = styled(motion.ul)`
 const BioItem = styled(motion.li)`
   font-size: 1.1rem;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 const ImageContainer = styled(motion.div)`
@@ -68,6 +99,11 @@ const ImageContainer = styled(motion.div)`
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    width: 300px;
+    order: ${(props) => (props.switchOrder ? 1 : 2)};
+  }
 `;
 
 const Image = styled.img`
@@ -85,15 +121,30 @@ const MissionStatement = styled(motion.div)`
   max-width: 900px;
   color: white;
   font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 30px;
+    max-width: 100%;
+  }
 `;
 
-export const About = () => {
+export const About = ({ switchOrder }) => {
   return (
     <AboutSection id="about">
       <AboutContent>
-        <TextContainer>
+        <ImageContainer
+          initial={{ scale: 0.5 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          switchOrder={switchOrder}
+        >
+          <Image src={brettImage} alt="About Brett" />
+        </ImageContainer>
+        <TextContainer switchOrder={switchOrder}>
           <Heading
-            initial={{ x: -100 }} // Slide in from the left
+            initial={{ x: -100 }}
             animate={{ x: 0 }}
             transition={{ duration: 1 }}
           >
@@ -109,10 +160,10 @@ export const About = () => {
           <ListContainer>
             <BioList>
               {[
-                "✔️ Licensed in 20+ states",
-                "✔️ Specializing in Medicare, Health, and Life Insurance",
-                "✔️ 10+ years of experience guiding clients",
-                "✔️ Client-first approach focused on building relationships"
+                '✔️ Licensed in 20+ states',
+                '✔️ Specializing in Medicare, Health, and Life Insurance',
+                '✔️ 10+ years of experience guiding clients',
+                '✔️ Client-first approach focused on building relationships',
               ].map((item, index) => (
                 <BioItem
                   key={index}
@@ -126,13 +177,6 @@ export const About = () => {
             </BioList>
           </ListContainer>
         </TextContainer>
-        <ImageContainer
-          initial={{ scale: 0.5 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-        >
-          <Image src={brettImage} alt="About Brett" />
-        </ImageContainer>
       </AboutContent>
 
       <MissionStatement

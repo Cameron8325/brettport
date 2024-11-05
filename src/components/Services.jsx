@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import bgPattern from '../img/servbg.jpg'; // Use your actual background image
+import bgPattern from '../img/servbg.jpg';
 
 const ServicesSection = styled.section`
-  background: url(${bgPattern}) no-repeat center center; /* Background image */
+  background: url(${bgPattern}) no-repeat center center;
   background-size: cover;
   padding: 100px 0;
   min-height: 100vh;
@@ -13,14 +13,23 @@ const ServicesSection = styled.section`
   align-items: center;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 70px 0;
+  }
 `;
 
 const Heading = styled(motion.h2)`
   font-size: 3rem;
-  color: white; /* Changed the heading color to white for better readability */
+  color: white;
   margin-bottom: 50px;
   text-align: center;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
 `;
 
 const DecorativeLine = styled.div`
@@ -29,6 +38,11 @@ const DecorativeLine = styled.div`
   background-color: #007b8a;
   margin-bottom: 30px;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    margin-bottom: 20px;
+  }
 `;
 
 const ServiceGrid = styled.div`
@@ -38,6 +52,12 @@ const ServiceGrid = styled.div`
   gap: 40px;
   max-width: 1200px;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 `;
 
 const ServiceCard = styled(motion.div)`
@@ -53,6 +73,11 @@ const ServiceCard = styled(motion.div)`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 20px;
+  }
 `;
 
 const IconBackground = styled.div`
@@ -64,32 +89,47 @@ const IconBackground = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto 20px auto;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
 `;
 
 const Icon = styled.div`
   font-size: 3rem;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const ServiceTitle = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #002b5b;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const ServiceDescription = styled.p`
   font-size: 1.1rem;
   line-height: 1.6;
   color: #666;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Services = () => {
   return (
     <ServicesSection id="services">
-      <Heading
-      >
-        Our Services
-      </Heading>
+      <Heading>Our Services</Heading>
       <DecorativeLine />
       <ServiceGrid>
         <ServiceCard whileHover={{ scale: 1.05 }}>

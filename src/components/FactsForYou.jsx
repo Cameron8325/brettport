@@ -15,6 +15,10 @@ const FactsContainer = styled.section`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 70px 15px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -23,6 +27,10 @@ const ContentWrapper = styled.div`
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
 `;
 
 const FactsHeading = styled(Typography)`
@@ -31,6 +39,10 @@ const FactsHeading = styled(Typography)`
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 2.2rem !important;
+  }
 `;
 
 const FactsSubtitle = styled(Typography)`
@@ -39,6 +51,10 @@ const FactsSubtitle = styled(Typography)`
   font-style: italic;
   text-align: center;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledPaper = styled(motion(Paper))`
@@ -47,17 +63,28 @@ const StyledPaper = styled(motion(Paper))`
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: none;
   border-left: 5px solid #007b8a;
-`;
 
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+`;
 
 const FactItemText = styled(ListItemText)`
   .MuiTypography-root {
     font-size: 1.2rem;
     color: #002b5b;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
   .MuiTypography-secondary {
     color: #4e4e4e;
     margin-top: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -69,11 +96,16 @@ const CallToActionBox = styled(Box)`
   color: white;
   text-align: center;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+    padding: 15px;
+  }
 `;
 
 const CallToActionButton = styled(Link)`
   font-size: 1.2rem;
-  background-color: #37474f; /* Deep Teal color */
+  background-color: #37474f;
   color: #ffffff;
   padding: 0.8rem 2rem;
   border-radius: 8px;
@@ -84,11 +116,15 @@ const CallToActionButton = styled(Link)`
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover {
-    background-color: #2b3a42; /* Slightly darker teal on hover */
+    background-color: #2b3a42;
     transform: scale(1.05);
   }
-`;
 
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+`;
 
 export const FactsForYou = () => {
   return (
@@ -102,35 +138,35 @@ export const FactsForYou = () => {
         <List>
           {[
             {
-              primary: "Employer Coverage",
+              primary: 'Employer Coverage',
               secondary:
-                "Provided through job benefits. Usually inexpensive or free for employees, but costly for family members."
+                'Provided through job benefits. Usually inexpensive or free for employees, but costly for family members.',
             },
             {
-              primary: "Underwritten Coverage",
+              primary: 'Underwritten Coverage',
               secondary:
-                "Ideal for self-employed individuals or small business workers. Requires good health to qualify."
+                'Ideal for self-employed individuals or small business workers. Requires good health to qualify.',
             },
             {
-              primary: "COBRA Coverage",
+              primary: 'COBRA Coverage',
               secondary:
-                "Allows continuation of employer coverage at your expense. Typically costly—consider alternatives like Underwritten plans."
+                'Allows continuation of employer coverage at your expense. Typically costly—consider alternatives like Underwritten plans.',
             },
             {
-              primary: "Medical Sharing Plans",
+              primary: 'Medical Sharing Plans',
               secondary:
-                "Not traditional insurance. Only use when no other affordable options exist, as these plans are not obligated to pay your bills."
+                'Not traditional insurance. Only use when no other affordable options exist, as these plans are not obligated to pay your bills.',
             },
             {
-              primary: "Short Term Plans",
+              primary: 'Short Term Plans',
               secondary:
-                "Best for short coverage gaps, but beware of deceptive marketing. Coverage often lacks long-term benefits."
+                'Best for short coverage gaps, but beware of deceptive marketing. Coverage often lacks long-term benefits.',
             },
             {
-              primary: "ACA Plans",
+              primary: 'ACA Plans',
               secondary:
-                "Also known as 'Obamacare.' Ideal for those with pre-existing conditions or qualifying for subsidies. Can be expensive without financial assistance."
-            }
+                'Also known as "Obamacare." Ideal for those with pre-existing conditions or qualifying for subsidies. Can be expensive without financial assistance.',
+            },
           ].map((fact, index) => (
             <StyledPaper key={index} whileHover={{ scale: 1.05 }}>
               <ListItem>
