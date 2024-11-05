@@ -24,16 +24,16 @@ const NavContainer = styled.div`
   }
 `;
 
-const Logo = styled.div`
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: none; /* Hidden by default */
+// const Logo = styled.div`
+//   color: white;
+//   font-size: 1.5rem;
+//   font-weight: bold;
+//   display: none; /* Hidden by default */
 
-  @media (max-width: 768px) {
-    display: block; /* Show logo on mobile if needed */
-  }
-`;
+//   @media (max-width: 768px) {
+//     display: block; /* Show logo on mobile if needed */
+//   }
+// `;
 
 const NavList = styled.ul`
   display: flex;
