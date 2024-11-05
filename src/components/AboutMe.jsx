@@ -48,7 +48,7 @@ const TextContainer = styled.div`
   @media (max-width: 768px) {
     max-width: 100%;
     padding: 15px;
-    order: ${(props) => (props.switchOrder ? 2 : 1)};
+    order: 2; /* Set order directly for mobile view */
   }
 `;
 
@@ -102,7 +102,7 @@ const ImageContainer = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 300px;
-    order: ${(props) => (props.switchOrder ? 1 : 2)};
+    order: 1; /* Set order directly for mobile view */
   }
 `;
 
